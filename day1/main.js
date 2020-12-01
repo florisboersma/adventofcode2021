@@ -1,12 +1,20 @@
 const entries = [1721, 979, 366, 299, 675, 1456];
 const currentYear = 2020;
 
-const test = entries.forEach((entry, index) => {
-  if (index !== 0) {
-    if (entry + entries[index - 1] === 2020) {
-      return [entry, entries[index - 1]];
+let solution = null;
+
+const test = entries.forEach((topEntry) => {
+  entries.forEach((subEntry) => {
+    console.log("__________");
+    console.log("topEntry: ", topEntry);
+    console.log("subEntry: ", subEntry);
+    console.log(topEntry + subEntry);
+    console.log("__________");
+
+    if (topEntry + subEntry === currentYear) {
+      solution = [topEntry, subEntry];
     }
-  }
+  });
 });
 
-console.log(test);
+console.log(solution);
