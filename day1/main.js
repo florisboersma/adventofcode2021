@@ -204,22 +204,28 @@ const currentYear = 2020;
 
 let solution = null;
 
-const test = entries.forEach((topEntry) => {
-  entries.forEach((subEntry) => {
-    // console.log("__________");
-    // console.log("topEntry: ", topEntry);
-    // console.log("subEntry: ", subEntry);
-    // console.log(topEntry + subEntry);
-    // console.log("__________");
+// _____ THIS IS THE ANSWER FOR PART ONE OF THE FIRST DAY: _____
+// entries.forEach((topEntry) => {
+//   entries.forEach((subEntry) => {
+//     if (topEntry + subEntry === currentYear) {
+//       solution = [topEntry, subEntry];
+//     }
+//   });
+// });
+// _____________________________________________________________
 
-    if (topEntry + subEntry === currentYear) {
-      solution = [topEntry, subEntry];
-    }
+entries.forEach((topEntry) => {
+  entries.forEach((subEntry) => {
+    entries.forEach((subSubEntry) => {
+      if (topEntry + subEntry + subSubEntry === currentYear) {
+        solution = [topEntry, subEntry, subSubEntry];
+      }
+    });
   });
 });
 
 console.log(solution);
 
-const multipliedSolution = solution[0] * solution[1];
+const multipliedSolution = solution[0] * solution[1] * solution[2];
 
 console.log(multipliedSolution);
