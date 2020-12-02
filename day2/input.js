@@ -1,4 +1,4 @@
-export default `1-13 r: gqdrspndrpsrjfjx
+const input = `1-13 r: gqdrspndrpsrjfjx
 5-16 j: jjjjkjjzjjjjjfjzjjj
 14-16 r: rrrnrrrrrcnrgxrr
 1-3 k: bkktwhgktv
@@ -998,3 +998,5 @@ export default `1-13 r: gqdrspndrpsrjfjx
 6-7 c: cccccdqcc
 2-6 x: vjkxbrfwnj
 16-18 s: kssssssswssssssssssb`;
+
+export { input };
