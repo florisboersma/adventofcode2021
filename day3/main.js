@@ -5,7 +5,7 @@ const formattedInput = input.split(/\r?\n/);
 const repeatedMap = formattedInput.map((row) => {
   let repeatedRow = "";
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 75; i++) {
     repeatedRow += row;
   }
 
@@ -53,9 +53,8 @@ for (let i = 0; i < 5; i++) {
         rowCounter += rowIncrement[i];
       }
     } else {
-      columnCounter += columnIncrement[i];
-
-      if (rowCounter % 2 === 0) {
+      if ((rowCounter !== 0) & (rowCounter % 2 === 0)) {
+        columnCounter += columnIncrement[i];
         if (row.charAt(columnCounter) === "#") {
           currentAmount++;
         }
