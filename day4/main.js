@@ -116,7 +116,7 @@ allFormattedPassports.forEach((passport) => {
       // check for hair color
       if (passportLine.substring(0, 3) === "hcl") {
         const data = passportLine.substring(4);
-        const regex = new RegExp(`^#([0-9a-fA-F]{6})$`);
+        const regex = new RegExp(`^#([0-9a-f]{6})$`);
 
         if (!regex.test(data)) {
           passportIsValid = false;
@@ -136,7 +136,7 @@ allFormattedPassports.forEach((passport) => {
       // check for passport ID
       if (passportLine.substring(0, 3) === "pid") {
         const data = passportLine.substring(4);
-        const regex = new RegExp(`^0([0-9]{8})$`);
+        const regex = new RegExp(`/^\d{9}$/`);
 
         if (!regex.test(data)) {
           passportIsValid = false;
