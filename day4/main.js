@@ -53,6 +53,7 @@ allFormattedPassports.forEach((passport) => {
       passport.forEach((passportLine) => {
         if (passportLine.substring(0, 3) === "cid") {
           hasCID = true;
+          passportIsValid = false;
         }
       });
 
