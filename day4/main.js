@@ -93,7 +93,7 @@ allFormattedPassports.forEach((passport) => {
       }
 
       // Check for height
-      if (passportLine.substring(0, 3) === "eyr") {
+      if (passportLine.substring(0, 3) === "hgt") {
         const data = passportLine.substring(4);
 
         if (data.slice(-2) === "cm") {
@@ -116,7 +116,7 @@ allFormattedPassports.forEach((passport) => {
       // check for hair color
       if (passportLine.substring(0, 3) === "hcl") {
         const data = passportLine.substring(4);
-        const regex = new RegExp(`^#([a-fA-F0-9]{6})$`);
+        const regex = new RegExp(`^#([a-f0-9]{6})$`);
 
         if (!regex.test(data)) {
           passportIsValid = false;
@@ -128,7 +128,7 @@ allFormattedPassports.forEach((passport) => {
         const data = passportLine.substring(4);
         const allEyeColours = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
 
-        if (!allEyeColours.indexOf(data) > -1) {
+        if (allEyeColours[data] === "undefined") {
           passportIsValid = false;
         }
       }
