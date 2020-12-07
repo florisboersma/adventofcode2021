@@ -116,7 +116,7 @@ allFormattedPassports.forEach((passport) => {
       // check for hair color
       if (passportLine.substring(0, 3) === "hcl") {
         const data = passportLine.substring(4);
-        const regex = new RegExp(`^#([a-f0-9]{6})$`);
+        const regex = new RegExp(`^#([0-9a-fA-F]{6})$`);
 
         if (!regex.test(data)) {
           passportIsValid = false;
