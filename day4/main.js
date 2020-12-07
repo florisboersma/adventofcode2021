@@ -103,7 +103,7 @@ allFormattedPassports.forEach((passport) => {
           ) {
             passportIsValid = false;
           }
-        } else {
+        } else if (data.slice(-2) === "in") {
           if (
             parseInt(data.slice(0, -2)) < 59 ||
             parseInt(data.slice(0, -2)) > 76
