@@ -8,8 +8,6 @@ formattedInput.forEach((inputLine) => {
   allFormattedPassports.push(formattedPassport);
 });
 
-console.log(allFormattedPassports);
-
 // _____ THIS IS THE ANSWER FOR PART ONE OF THE FIRST DAY: _____
 // let validPassports = 0;
 // allFormattedPassports.forEach((passport) => {
@@ -60,6 +58,8 @@ allFormattedPassports.forEach((passport) => {
       if (!hasCID) {
         allRequiredFields = true;
       }
+    } else {
+      passportIsValid = false;
     }
   }
 
@@ -111,6 +111,8 @@ allFormattedPassports.forEach((passport) => {
           ) {
             passportIsValid = false;
           }
+        } else {
+          passportIsValid = false;
         }
       }
 
@@ -129,7 +131,7 @@ allFormattedPassports.forEach((passport) => {
         const data = passportLine.substring(4);
         const allEyeColours = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
 
-        if (allEyeColours[data] === "undefined") {
+        if (!allEyeColours.includes(data)) {
           passportIsValid = false;
         }
       }
@@ -137,7 +139,7 @@ allFormattedPassports.forEach((passport) => {
       // check for passport ID
       if (passportLine.substring(0, 3) === "pid") {
         const data = passportLine.substring(4);
-        const regex = new RegExp(`/^\d{9}$/`);
+        const regex = new RegExp("^\\d{9}$");
 
         if (!regex.test(data)) {
           passportIsValid = false;
