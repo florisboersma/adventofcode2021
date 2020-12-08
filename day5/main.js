@@ -20,12 +20,11 @@ const allTakenSeats = formattedInput.map((singleLine) => {
       startValue = 1;
     }
     if (index !== 6) {
+      const middleNumber = Math.ceil((startValue + rowRange[1]) / 2);
       if (instruction === "F") {
-        const middleNumber = Math.floor((startValue + rowRange[1]) / 2);
         console.log("Using the lower half");
         rowRange = [rowRange[0], middleNumber];
       } else {
-        const middleNumber = Math.floor((startValue + rowRange[1]) / 2);
         console.log("Using the upper half");
         rowRange = [middleNumber, rowRange[1]];
       }
